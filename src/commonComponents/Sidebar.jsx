@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineAppstore, AiOutlineLineChart } from "react-icons/ai";
 import { MdDashboard, MdConnectWithoutContact, MdNotificationsActive } from "react-icons/md";
+import { useAppContext } from "../contexts/AppContext";
 
 const navItems = [
   { path: "/", label: "Dashboard", icon: <MdDashboard className="text-xl" /> },
@@ -11,6 +12,7 @@ const navItems = [
 ];
 
 function Sidebar() {
+  const {setPathname}=useAppContext();
   return (
     <div>
       {/* Desktop Sidebar */}
@@ -30,6 +32,7 @@ function Sidebar() {
                   className={({ isActive }) =>
                     `block py-3 px-4 rounded-lg ${isActive ? " text-white font-bold" : ""}`
                   }
+                  onClick={()=>setPathname(label)}
                 >
                   {label}
                 </NavLink>
@@ -49,6 +52,7 @@ function Sidebar() {
             className={({ isActive }) =>
               `flex flex-col items-center text-gray-400 ${isActive ? "text-white font-bold" : "hover:text-white"}`
             }
+            onClick={()=>setPathname(label)}
           >
             {icon}
             <span className="text-xs">{label}</span>

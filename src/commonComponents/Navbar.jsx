@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import "tailwindcss/tailwind.css";
 import { FiMoreVertical } from "react-icons/fi";
+import { useAppContext } from "../contexts/AppContext";
 
 export function Navbar() {
+  const {pathname}=useAppContext();
+  
   return (
     <nav className="flex justify-between items-center bg-black border-b border-gray-700 fixed z-[999] top-0 w-full text-white text-sm">
       {/* Desktop Navbar */}
-      <div className="hidden md:flex items-center w-full justify-between">
-        <div className="flex items-center  p-4">
+      <div className="hidden md:flex items-center w-full ">
+        <div className="flex items-center w-80">
           <img src={logo} alt="Logo" className="h-6 mr-2" loading='lazy' />
           <span className="text-white font-bold">Vertxlabs, Inc</span>
         </div>
-        <div className="flex text-white text-center">
-          <button className="hover:text-gray-400  border-l-2 border-gray-700 px-6  p-4">Activity</button>
-          <button className="hover:text-gray-400 border-l-2 border-gray-700 px-6  p-4">Log out</button>
+        
+        <div className="flex text-white w-full justify-between">
+            <h1 className="p-4 flex-grow capitalize font-bold">{pathname}</h1>
+            <div>
+           <button className="hover:text-gray-400  border-l-2 border-gray-700 px-6  p-4">Activity</button>
+           <button className="hover:text-gray-400 border-l-2 border-gray-700 px-6  p-4">Log out</button>
+            </div>
         </div>
       </div>
       

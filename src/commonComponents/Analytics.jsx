@@ -35,7 +35,7 @@ const locations = [
 const Analytics = () => {
     const [activeTab, setActiveTab] = useState("overview");
     return (
-        <div className="bg-black my-12 text-white min-h-screen w-full lg:max-h-[90vh] overflow-y-scroll p-6">
+        <div className="bg-black my-12 text-white min-h-screen w-full lg:max-h-[90vh] overflow-y-scroll py-6">
             <div className="flex justify-between">
                 <div className="w-full">
                     <button
@@ -45,13 +45,13 @@ const Analytics = () => {
                         Overview
                     </button>
                     <button
-                        className={`w-1/2 lg:w-fit px-6 ${activeTab === "demographics" ? "border-b-2 border-white text-white" : "text-gray-400"}`}
+                        className={`w-1/2 lg:w-fit px-6 pb-2 ${activeTab === "demographics" ? "border-b-2 border-white text-white" : "text-gray-400"}`}
                         onClick={() => setActiveTab("demographics")}
                     >
                         Demographics
                     </button>
                 </div>
-                <button className="hidden lg:flex px-6   items-center text-gray-400 hover:text-white">
+                <button className="hidden lg:flex px-6 items-center text-gray-400 hover:text-white">
                     More <FiArrowRight className="ml-2" />
                 </button>
             </div>
@@ -78,6 +78,7 @@ const Analytics = () => {
 
                     <div className="bg-gray-950 p-6 rounded-lg">
                         <h2 className="text-lg font-semibold mb-4">Insights</h2>
+                        <div className="flex flex-row lg:flex-col justify-between">
                         <div className="mb-3">
                             <p className="">Founders</p>
                             <div className="flex">
@@ -96,12 +97,13 @@ const Analytics = () => {
                                     <span className="text-gray-400">(001)</span></div>
                             </div>
                         </div>
+                        </div>
                         <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t border-gray-700 w-full">
                             View detailed insights <FiArrowRight className="ml-2 my-auto" />
                         </button>
                     </div>
-
-                    <div className="bg-gray-950 p-3 rounded-lg col-span-3">
+                    </div>
+                    <div className="bg-gray-950 p-3 rounded-lg col-span-3 mt-3">
                         <h2 className="text-lg font-semibold mb-4">Demographics</h2>
                         <div className="flex flex-col lg:flex-row gap-4 w-full">
                             <div className="h-48 lg:h-56 w-full relative">
@@ -123,7 +125,7 @@ const Analytics = () => {
                                         </Marker>
                                     ))}
                                 </MapContainer>
-                                <div className="absolute flex transformflex bg-white/10 rounded-full p-2 gap-6">
+                                <div className="absolute hidden lg:flex transformflex bg-white/10 rounded-full p-2 gap-6 ">
                                     {locations.map((location, index) => (
                                         <div key={index} className="flex items-center">
                                             <div
@@ -160,7 +162,7 @@ const Analytics = () => {
                             View all countries <FiArrowRight className="ml-2 my-auto" />
                         </button>
                     </div>
-                </div>
+                
             </div>
         </div>
     );
