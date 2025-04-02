@@ -8,6 +8,7 @@ import canada from "../assets/ca.svg";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import VisitorsConnectionsChart from "./VisitorsConnectionsChart";
 
 const visitorData = [
     { date: "Mar 1", visitors: 500 },
@@ -64,22 +65,9 @@ const Analytics = () => {
                 </div>
                 <div className="grid grid-cols-1 w-full lg:grid-cols-3  lg:gap-6 pb-3">
                     <div className="bg-white/5 border border-gray-600 p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
-                        <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-lg font-semibold">Visitors</h2>
-                            <span className="text-sm text-green-400">+69% (897)</span>
-                        </div>
-                        <ResponsiveContainer width="100%" height={150}>
-                            <LineChart data={visitorData}>
-                                <CartesianGrid stroke="rgba(255,255,255,0.1)" />
-                                <XAxis dataKey="date" stroke="#888" />
-                                <YAxis stroke="#888" />
-                                <Tooltip />
-                                <Line type="monotone" dataKey="visitors" stroke="#ffffff" strokeWidth={2} dot={{ fill: "#fff" }} />
-                            </LineChart>
-                        </ResponsiveContainer>
+                    <VisitorsConnectionsChart/>
                     </div>
-
-                    <div className="bg-white/5 border border-gray-600 p-6 w-full rounded-lg">
+                    <div className="bg-white/5 border border-gray-600 p-6 w-full flex flex-col justify-between rounded-lg">
                         <h2 className="text-lg font-semibold mb-4">Insights</h2>
                         <div className="flex flex-row lg:flex-col justify-between">
                             <div className="mb-3">
