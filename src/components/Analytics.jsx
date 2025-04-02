@@ -58,12 +58,12 @@ const Analytics = () => {
                     More <FiArrowRight className="ml-2" />
                 </button>
             </div>
-            <div className="px-0 lg:px-10 py-4">
+            <div className="px-0 lg:px-10 py-4 m-2">
                 <div className="hidden lg:flex justify-between items-center ">
                     <h1 className="text-2xl font-semibold pb-4 ">Overview</h1>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="bg-gray-950 p-6 w-full rounded-lg col-span-2">
+                <div className="grid grid-cols-1 w-full lg:grid-cols-3  lg:gap-6 pb-3">
+                    <div className="bg-white/5 border border-gray-600 p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
                         <div className="flex justify-between items-center mb-4">
                             <h2 className="text-lg font-semibold">Visitors</h2>
                             <span className="text-sm text-green-400">+69% (897)</span>
@@ -79,7 +79,7 @@ const Analytics = () => {
                         </ResponsiveContainer>
                     </div>
 
-                    <div className="bg-gray-950 p-6 rounded-lg">
+                    <div className="bg-white/5 border border-gray-600 p-6 w-full rounded-lg">
                         <h2 className="text-lg font-semibold mb-4">Insights</h2>
                         <div className="flex flex-row lg:flex-col justify-between">
                             <div className="mb-3">
@@ -87,8 +87,8 @@ const Analytics = () => {
                                 <div className="flex">
                                     <p className="text-2xl font-semibold">7.4K </p>
                                     <div className="inline-flex flex-col text-xs ml-6 ">
-                                        <span className="text-green-400"> (+0.00%)</span>
-                                        <span className="text-gray-400">(001)</span>
+                                        <span className="text-green-400"> +000%</span>
+                                        <span className="text-gray-400">(000)</span>
                                     </div>
                                 </div>
                             </div>
@@ -96,8 +96,8 @@ const Analytics = () => {
                                 <p className="">Investors</p>
                                 <div className="flex">
                                     <p className="text-2xl font-semibold">6.09K</p>
-                                    <div className="inline-flex flex-col text-xs ml-6"><span className="text-green-400"> (0.30%)</span>
-                                        <span className="text-gray-400">(001)</span></div>
+                                    <div className="inline-flex flex-col text-xs ml-6"><span className="text-green-400"> 000%</span>
+                                        <span className="text-gray-400">(000)</span></div>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ const Analytics = () => {
                         </button>
                     </div>
                 </div>
-                <div className="bg-gray-950 p-3 rounded-lg col-span-3 mt-3">
+                <div className="bg-white/5 border border-gray-600 p-3 rounded-lg col-span-3 mt-3">
                     <h2 className="text-lg font-semibold mb-4">Demographics</h2>
                     <div className="flex flex-col lg:flex-row gap-4 w-full">
                         <div className="h-48 lg:h-56 w-full relative">
@@ -128,7 +128,7 @@ const Analytics = () => {
                                     </Marker>
                                 ))}
                             </MapContainer>
-                            <div className="absolute hidden lg:flex transformflex bg-white/10 rounded-full p-2 gap-6 ">
+                            <div className="absolute hidden lg:flex transformflex bg-white/10 rounded-full p-2  ">
                                 {locations.map((location, index) => (
                                     <div key={index} className="flex items-center">
                                         <div

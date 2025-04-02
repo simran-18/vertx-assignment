@@ -12,7 +12,7 @@ export function Navbar() {
       {/* Desktop Navbar */}
       <div className="hidden md:flex items-center w-full ">
         <div className="flex items-center w-80">
-          <img src={logo} alt="Logo" className="h-6 mr-2" loading='lazy' />
+          <img src={logo} alt="Logo" className="h-10 mr-2" loading='lazy' />
           <span className="text-white font-bold">Vertxlabs, Inc</span>
         </div>
         
