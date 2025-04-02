@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { AiOutlineAppstore, AiOutlineLineChart } from "react-icons/ai";
-import { MdDashboard, MdConnectWithoutContact, MdNotificationsActive } from "react-icons/md";
+import { AiOutlineAppstore, AiOutlineLineChart ,AiOutlineSetting} from "react-icons/ai";
+import { MdDashboard, MdConnectWithoutContact, MdNotificationsActive,MdPerson } from "react-icons/md";
 import { useAppContext } from "../contexts/AppContext";
 
 const navItems = [
@@ -9,6 +9,8 @@ const navItems = [
   { path: "/connect", label: "Connect", icon: <MdConnectWithoutContact className="text-xl" /> },
   { path: "/activity", label: "Activity", icon: <MdNotificationsActive className="text-xl" /> },
   { path: "/dealroom", label: "Dealroom", icon: <AiOutlineAppstore className="text-xl" /> },
+  { path: "/settings", label: "Settings", icon: <AiOutlineSetting className="text-xl" /> },
+  { path: "/profile", label: "Profile", icon: <MdPerson className="text-xl" /> },
 ];
 
 function Sidebar() {
@@ -44,7 +46,7 @@ function Sidebar() {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black p-4 flex justify-around items-center border-t border-gray-800">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black p-4 flex gap-10 justify-around items-center border-t border-gray-800 overflow-x-scroll">
         {navItems.map(({ path, label, icon }) => (
           <NavLink
             key={path}

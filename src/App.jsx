@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from './commonComponents/Sidebar';
-import Dashboard from "./components/Dashboard";
 import { Navbar } from './commonComponents/Navbar';
-import Analytics from './commonComponents/Analytics';
+import Analytics from './components/Analytics';
 import CommingSoon from './components/CommingSoon';
+import Profile from './components/Profile';
 
 function App() {  
     return (
@@ -20,6 +19,8 @@ function App() {
               <Route path="/connect" element={<CommingSoon />} />
               <Route path="/dealroom" element={<CommingSoon />} />
               <Route path="/activity" element={<CommingSoon />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<CommingSoon />} />
             </Routes>
           </div>
       </Router>

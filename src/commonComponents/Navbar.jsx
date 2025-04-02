@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logo from "../assets/logo.png";
 import "tailwindcss/tailwind.css";
 import { FiMoreVertical } from "react-icons/fi";
