@@ -9,8 +9,8 @@ const navItems = [
   { path: "/connect", label: "Connect", icon: <MdConnectWithoutContact className="text-xl" /> },
   { path: "/activity", label: "Activity", icon: <MdNotificationsActive className="text-xl" /> },
   { path: "/dealroom", label: "Dealroom", icon: <AiOutlineAppstore className="text-xl" /> },
-  { path: "/settings", label: "Settings", icon: <AiOutlineSetting className="text-xl" /> },
   { path: "/profile", label: "Profile", icon: <MdPerson className="text-xl" /> },
+  { path: "/settings", label: "Settings", icon: <AiOutlineSetting className="text-xl" /> },
 ];
 
 function Sidebar() {

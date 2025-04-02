@@ -26,7 +26,7 @@ export function Navbar() {
       </div>
       
       {/* Mobile Navbar */}
-    <div className="flex md:hidden items-center w-full justify-between p-3 z-[1000]">
+    <div className="flex md:hidden items-center w-full justify-between p-3 z-[999]">
         <img
           src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=1024x1024&w=is&k=20&c=iGtRKCTRSvPVl3eOIpzzse5SvQFfImkV0TZuFh-74ps="
           alt="Profile"
