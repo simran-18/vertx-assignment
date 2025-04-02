@@ -1,10 +1,14 @@
 import './App.css'
+import {lazy,Suspense} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from './commonComponents/Sidebar';
 import { Navbar } from './commonComponents/Navbar';
-import Analytics from './components/Analytics';
-import CommingSoon from './components/CommingSoon';
-import Profile from './components/Profile';
+import Loader from './commonComponents/Loader';
+
+// Lazy-loaded components
+const Analytics = lazy(() => import('./components/Analytics'));
+const Profile = lazy(() => import('./components/Profile'));
+const CommingSoon = lazy(() => import('./components/CommingSoon'));
 
 function App() {  
     return (
@@ -13,6 +17,7 @@ function App() {
       <Router>
         <Sidebar />
         <div className="flex-1 flex flex-col px-0 md:pl-64">
+        <Suspense fallback={<div className="text-center text-white mt-10"><Loader/></div>}>
             <Routes>
               <Route path="/" element={<CommingSoon />} />
               <Route path="/analytics" element={<Analytics />} />
@@ -22,6 +27,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<CommingSoon />} />
             </Routes>
+        </Suspense>
           </div>
       </Router>
       </>

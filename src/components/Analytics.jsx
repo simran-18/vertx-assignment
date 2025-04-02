@@ -45,7 +45,7 @@ const Analytics = () => {
                     {tabs.map(({ id, label }) => (
                         <button
                             key={id}
-                            className={`w-1/2 lg:w-fit px-6py-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-gray-400 hover:text-white"
+                            className={`w-1/2 lg:w-fit px-6 py-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-gray-400 hover:text-white"
                                 }`}
                             onClick={() => setActiveTab(id)}
                         >
