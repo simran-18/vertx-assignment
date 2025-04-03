@@ -20,7 +20,7 @@ const foundedCompanies = [
 const experiences = ["Company 1", "Company 2", "Company 3"];
 
 const SectionCard = ({ title, count, items, renderItem }) => (
-    <div className="bg-white/5 border border-gray-600 p-6 rounded-lg">
+    <div className="bg-white/5 border-1 border-dark p-6 rounded-lg">
         <h3 className="text-white text-lg font-semibold">{title}</h3>
         <span className="text-6xl font-bold text-white my-6 block">0{count}</span>
         <div className="space-y-4">{items.map(renderItem)}</div>
@@ -32,7 +32,7 @@ const Profile = () => {
 
     return (
         <div className="bg-black my-12 text-white min-h-screen w-full lg:max-h-[90vh] overflow-y-scroll z-0">
-            <div className="flex justify-between border-b border-gray-500">
+            <div className="flex justify-between border-b-1 border-dark">
                 <div className="w-full">
                     {tabs.map(({ id, label }) => (
                         <button
@@ -52,7 +52,7 @@ const Profile = () => {
             <div className="px-0 lg:px-10 py-4 m-2 lg:m-0">
                 <h1 className="hidden lg:block text-2xl font-semibold pb-4">Overview</h1>
                 <div className="grid grid-cols-1 gap-6 mb-6">
-                    <div className="bg-white/5 border border-gray-600 p-6 rounded-lg flex flex-col lg:flex-row">
+                    <div className="bg-white/5 border-1 border-dark p-6 rounded-lg flex flex-col lg:flex-row">
                         <img src={profile} alt="profile" className="h-36 w-32" />
                         <div className="flex flex-row items-end lg:items-start lg:flex-col ml-6">
                             <div>

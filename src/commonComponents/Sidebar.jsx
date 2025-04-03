@@ -18,7 +18,7 @@ function Sidebar() {
   return (
     <div>
       {/* Desktop Sidebar */}
-      <div className="hidden md:block fixed inset-y-0 left-0 w-64 border-r border-gray-700">
+      <div className="hidden md:block fixed inset-y-0 left-0 w-64 border-r-1 border-dark">
         <nav className="text-gray-400 mt-12">
           <div className="flex p-4 w-full">
             <img

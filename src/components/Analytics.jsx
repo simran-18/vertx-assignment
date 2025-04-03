@@ -41,7 +41,7 @@ const Analytics = () => {
     const [activeTab, setActiveTab] = useState("overview");
     return (
         <div className="bg-black my-12 text-white min-h-screen w-full lg:max-h-[90vh] overflow-y-scroll z-0">
-            <div className="flex justify-between  border-b border-gray-500">
+            <div className="flex justify-between  border-b-1 border-dark">
                 <div className="w-full">
                     {tabs.map(({ id, label }) => (
                         <button
@@ -64,10 +64,10 @@ const Analytics = () => {
                     <h1 className="text-2xl font-semibold pb-4 ">Overview</h1>
                 </div>
                 <div className="grid grid-cols-1 w-full lg:grid-cols-3  lg:gap-6 pb-3">
-                    <div className="bg-white/5 border border-gray-600 p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
+                    <div className="bg-white/5 border-1 border-dark p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
                     <VisitorsConnectionsChart/>
                     </div>
-                    <div className="bg-white/5 border border-gray-600 p-6 w-full flex flex-col justify-between rounded-lg">
+                    <div className="bg-white/5 border-1 border-dark p-6 w-full flex flex-col justify-between rounded-lg">
                         <h2 className="text-lg font-semibold mb-4">Insights</h2>
                         <div className="flex flex-row lg:flex-col justify-between">
                             <div className="mb-3">
@@ -89,12 +89,12 @@ const Analytics = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t border-gray-700 w-full">
+                        <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t1 border-dark w-full">
                             View detailed insights <FiArrowRight className="ml-2 my-auto" />
                         </button>
                     </div>
                 </div>
-                <div className="bg-white/5 border border-gray-600 p-3 rounded-lg col-span-3 mt-3">
+                <div className="bg-white/5 border-1 border-dark p-3 rounded-lg col-span-3 mt-3">
                     <h2 className="text-lg font-semibold mb-4">Demographics</h2>
                     <div className="flex flex-col lg:flex-row gap-4 w-full">
                         <div className="h-48 lg:h-56 w-full relative">
@@ -116,7 +116,7 @@ const Analytics = () => {
                                     </Marker>
                                 ))}
                             </MapContainer>
-                            <div className="absolute hidden lg:flex transformflex bg-white/10 rounded-full p-2  ">
+                            <div className="absolute hidden lg:flex transform flex bg-white/10 rounded-full p-2  ">
                                 {locations.map((location, index) => (
                                     <div key={index} className="flex items-center">
                                         <div

@@ -8,19 +8,19 @@ export function Navbar() {
   const {pathname}=useAppContext();
   
   return (
-    <nav className="flex justify-between items-center bg-black border-b border-gray-700 fixed z-[999] top-0 w-full text-white text-sm">
+    <nav className="flex justify-between items-center bg-black border-b-1 border-dark fixed z-[999] top-0 w-full text-white text-sm">
       {/* Desktop Navbar */}
       <div className="hidden md:flex items-center w-full ">
         <div className="flex items-center w-80">
-          <img src={logo} alt="Logo" className="h-10 mr-2" loading='lazy' />
-          <span className="text-white font-bold">Vertxlabs, Inc</span>
+          <img src={logo} alt="Logo" className="h-10 mx-3" loading='lazy' />
+          <span className="text-white font-bold text-lg">Vertxlabs, Inc</span>
         </div>
         
         <div className="flex text-white w-full justify-between">
-            <h1 className="p-4 flex-grow capitalize font-bold">{pathname}</h1>
+            <h1 className="p-4 flex-grow capitalize text-base font-semibold">{pathname}</h1>
             <div>
-           <button className="hover:text-gray-400  border-l-2 border-gray-700 px-6  p-4">Activity</button>
-           <button className="hover:text-gray-400 border-l-2 border-gray-700 px-6  p-4">Log out</button>
+           <button className="hover:text-gray-400  border-l-1 border-dark px-6  p-4">Activity</button>
+           <button className="hover:text-gray-400 border-l-1 border-dark px-6  p-4">Log out</button>
             </div>
         </div>
       </div>

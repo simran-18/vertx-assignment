@@ -2,7 +2,14 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"], // Ensure this is correct
   theme: {
-    extend: {},
+    extend: {
+      borderColor: {
+        dark: '#1D1D1D', 
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+    },
   },
   plugins: [],
 }
