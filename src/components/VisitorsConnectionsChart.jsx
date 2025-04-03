@@ -20,7 +20,7 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-
+import SingleSelect from '../commonComponents/SingleSelect';
 const VisitorsConnectionsChart = () => {
     // Mock data for 3 different time periods: "Last 30 days", "Last 7 days", "This week"
     const data = {
@@ -70,17 +70,20 @@ const VisitorsConnectionsChart = () => {
         setCurrentData(data[selectedPeriod]);
     };
 
-    // Handle metric change (add/remove metrics)
     const handleMetricChange = (e) => {
         const selectedMetric = e.target.value;
+        setMetrics([selectedMetric]); // Replaces the previous metric with the new selection
+    };
+    const handleAddMetricChange = (e) => {
+        const selectedMetric = e.target.value;
         setMetrics((prevMetrics) => {
-            if (!prevMetrics.includes(selectedMetric)) {
-                return [...prevMetrics, selectedMetric]; // Add metric to the chart
-            }
-            return prevMetrics;
+            const newMetrics = prevMetrics.includes(selectedMetric)
+                ? prevMetrics.filter((metric) => metric !== selectedMetric) // Remove if already selected
+                : [...prevMetrics, selectedMetric]; // Add if not present
+            return newMetrics;
         });
     };
-
+    
     // Calculate percentage change for each metric
     const calculatePercentageChange = (metricData) => {
         return ((metricData?.[metricData?.length - 1] - metricData?.[0]) / metricData?.[0]) * 100;
@@ -179,48 +182,44 @@ const VisitorsConnectionsChart = () => {
     return (
         <div className="">
             <div className="flex space-x-4 mb-6">
-                <div className="flex flex-col">
-                    <select
-                        id="metrics"
-                        value=""
-                        onChange={handleMetricChange}
-                        className="bg-white/5 text-white p-1 rounded-md text-xs "
-                    >
-                        <option value="">Select Metric</option>
-                        <option value="visitors">Visitors</option>
-                        <option value="connections">Connections</option>
-                        <option value="interactions">Interactions</option>
-                        <option value="impressions">Impressions</option>
-                    </select>
-                </div>
-
-                <div className="flex flex-col">
-                    <select
-                        id="timePeriod"
-                        value={timePeriod}
-                        onChange={handleTimePeriodChange}
-                        className="bg-white/5 text-white p-1 rounded-md text-xs "
-                    >
-                        <option value="Today">Today</option>
-                        <option value="Yesterday">Yesterday</option>
-                        <option value="This week">This week</option>
-                        <option value="Last week">Last week</option>
-                        <option value="Last 7 days">Last 7 days</option>
-                        <option value="Last 30 days">Last 30 days</option>
-                    </select>
-                </div>
-                <div className="flex flex-col">
-                    <select
-                        id="addMetric"
-                        value=""
-                        onChange={handleMetricChange}
-                        className="bg-white/5 text-white p-1 rounded-md text-xs "
-                    >
-                        <option value="">+ Add Metric</option>
-                        <option value="connections">Connections</option>
-                        <option value="interactions">Interactions</option>
-                        <option value="impressions">Impressions</option>
-                    </select>
+                <div className='flex md:gap-4 w-full md:w-3/4'>
+            <SingleSelect
+                    id="metrics"
+                    label="Select Metric"
+                    value={metrics[0]} 
+                    onChange={handleMetricChange}
+                    options={[
+                        { value: "visitors", label: "Visitors" },
+                        { value: "connections", label: "Connections" },
+                        { value: "interactions", label: "Interactions" },
+                        { value: "impressions", label: "Impressions" },
+                    ]}
+                />
+                 <SingleSelect
+                    id="timePeriod"
+                    label="Time Period"
+                    value={timePeriod}
+                    onChange={handleTimePeriodChange}
+                    options={[
+                        { value: "Yesterday", label: "Yesterday" },
+                        { value: "This week", label: "This week" },
+                        { value: "Last week", label: "Last week" },
+                        { value: "Last 7 days", label: "Last 7 days" },
+                        { value: "Last 30 days", label: "Last 30 days" },
+                    ]}
+                />
+                <SingleSelect
+                    id="addMetric"
+                    label="+ Add"
+                    value={"+ Add"}
+                    onChange={handleAddMetricChange}
+                    options={[
+                        { value: "+ Add", label: "+ Add" },
+                        { value: "connections", label: "Connections" },
+                        { value: "interactions", label: "Interactions" },
+                        { value: "impressions", label: "Impressions" },
+                    ]}
+                />
                 </div>
             </div>
             <div className="text-white overflow-x-scroll flex space-x-4 ">

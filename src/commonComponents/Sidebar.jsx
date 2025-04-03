@@ -20,13 +20,15 @@ function Sidebar() {
       {/* Desktop Sidebar */}
       <div className="hidden md:block fixed inset-y-0 left-0 w-64 border-r-1 border-dark">
         <nav className="text-gray-400 mt-12">
-          <div className="flex p-4 w-full">
+          <div className="flex w-full">
+            <div className="border-r-1 border-dark h-screen p-2 py-4 w-16">
             <img
               src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=1024x1024&w=is&k=20&c=iGtRKCTRSvPVl3eOIpzzse5SvQFfImkV0TZuFh-74ps="
               alt="Profile"
               className="h-8 w-8 rounded-full"
-            />
-            <div className="w-full flex flex-col justify-center ml-6">
+              />
+              </div>
+            <div className="w-full flex flex-col justify-start ml-6 p-4">
               {navItems.map(({ path, label }) => (
                 <NavLink
                   key={path}
@@ -40,7 +42,7 @@ function Sidebar() {
                 </NavLink>
               ))}
             </div>
-            <div className="fixed bottom-3 font-xl ">+</div>
+            <div className="fixed bottom-3 left-3 font-xl ">+</div>
           </div>
         </nav>
       </div>

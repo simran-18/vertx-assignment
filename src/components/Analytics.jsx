@@ -21,10 +21,10 @@ const visitorData = [
 ];
 
 const demographicsData = [
-    { country: "India", percentage: 60, color: "#3b82f6", map: india },
-    { country: "USA", percentage: 25, color: "#f97316", map: usa },
-    { country: "Canada", percentage: 10, color: "#e11d48", map: canada },
-    { country: "UAE", percentage: 7, color: "#16a34a", map: uae },
+    { country: "India", percentage: 60, color: "#4834D4", map: india },
+    { country: "USA", percentage: 25, color: "#BD5302", map: usa },
+    { country: "Canada", percentage: 10, color: "#E9C16B", map: canada },
+    { country: "UAE", percentage: 7, color: "#579560", map: uae },
 ];
 const locations = [
     { lat: 40.7128, lon: -74.0060, color: 'orange', label: 'New York' },
@@ -64,10 +64,10 @@ const Analytics = () => {
                     <h1 className="text-2xl font-semibold pb-4 ">Overview</h1>
                 </div>
                 <div className="grid grid-cols-1 w-full lg:grid-cols-3  lg:gap-6 pb-3">
-                    <div className="bg-white/5 border-1 border-dark p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
+                    <div className=" border-1 border-dark p-6 w-full mb-6 lg:mb-0 rounded-lg col-span-2">
                     <VisitorsConnectionsChart/>
                     </div>
-                    <div className="bg-white/5 border-1 border-dark p-6 w-full flex flex-col justify-between rounded-lg">
+                    <div className=" border-1 border-dark p-6 w-full flex flex-col justify-between rounded-lg">
                         <h2 className="text-lg font-semibold mb-4">Insights</h2>
                         <div className="flex flex-row lg:flex-col justify-between">
                             <div className="mb-3">
@@ -89,12 +89,12 @@ const Analytics = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t1 border-dark w-full">
+                        <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t-1 border-dark w-full">
                             View detailed insights <FiArrowRight className="ml-2 my-auto" />
                         </button>
                     </div>
                 </div>
-                <div className="bg-white/5 border-1 border-dark p-3 rounded-lg col-span-3 mt-3">
+                <div className=" border-1 border-dark p-3 rounded-lg col-span-3 mt-3">
                     <h2 className="text-lg font-semibold mb-4">Demographics</h2>
                     <div className="flex flex-col lg:flex-row gap-4 w-full">
                         <div className="h-48 lg:h-56 w-full relative">
@@ -138,7 +138,7 @@ const Analytics = () => {
                                             <span className="font-medium">{country}</span>
                                             <span className="text-gray-400">{percentage}%</span>
                                         </div>
-                                        <div className="bg-gray-500 h-3 rounded-lg w-full mt-1 relative">
+                                        <div className="bg-white/10 h-3 rounded-lg w-full mt-1 relative">
                                             <div
                                                 className="h-3 absolute left-0 rounded-lg"
                                                 style={{ width: `${percentage}%`, backgroundColor: color }}

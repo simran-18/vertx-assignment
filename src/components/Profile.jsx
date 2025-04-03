@@ -4,7 +4,7 @@ import profile from "../assets/profile.png";
 import arrow from "../assets/arrow.png";
 import tick from "../assets/tick.png";
 import social from "../assets/social.png";
-
+import logo from "../assets/logo.png";
 const tabs = [
     { id: "overview", label: "Overview" },
     { id: "portfolio", label: "Portfolio" },
@@ -13,14 +13,14 @@ const tabs = [
 ];
 
 const foundedCompanies = [
-    { name: "Vertx", year: 2025, industry: "Fintech", role: "CEO", roleBg: "bg-green-400" },
+    { name: "Vertx", year: 2025, industry: "Fintech", role: "CEO", roleBg: "bg-green-400", logo: logo },
     { name: "Company", year: 2023, industry: "QuickCommerce", role: "PROPRIETOR", roleBg: "bg-purple-300", acquired: "abc" }
 ];
 
 const experiences = ["Company 1", "Company 2", "Company 3"];
 
 const SectionCard = ({ title, count, items, renderItem }) => (
-    <div className="bg-white/5 border-1 border-dark p-6 rounded-lg">
+    <div className=" border-1 border-dark p-6 rounded-lg">
         <h3 className="text-white text-lg font-semibold">{title}</h3>
         <span className="text-6xl font-bold text-white my-6 block">0{count}</span>
         <div className="space-y-4">{items.map(renderItem)}</div>
@@ -52,7 +52,7 @@ const Profile = () => {
             <div className="px-0 lg:px-10 py-4 m-2 lg:m-0">
                 <h1 className="hidden lg:block text-2xl font-semibold pb-4">Overview</h1>
                 <div className="grid grid-cols-1 gap-6 mb-6">
-                    <div className="bg-white/5 border-1 border-dark p-6 rounded-lg flex flex-col lg:flex-row">
+                    <div className=" border-1 border-dark p-6 rounded-lg flex flex-col lg:flex-row">
                         <img src={profile} alt="profile" className="h-36 w-32" />
                         <div className="flex flex-row items-end lg:items-start lg:flex-col ml-6">
                             <div>
@@ -70,10 +70,20 @@ const Profile = () => {
                         title="Founded Companies"
                         count={foundedCompanies.length}
                         items={foundedCompanies}
-                        renderItem={({ name, year, industry, role, roleBg, acquired }) => (
+                        renderItem={({ name, year, industry, role, roleBg, acquired, logo }) => (
                             <div key={name} className="flex justify-between items-start w-full">
-                                <div className="h-8 w-8 bg-gray-300 rounded-md mr-2"></div>
-                                <div>
+                                <div className="relative h-8 w-8 bg-gray-300 rounded-md mr-2">
+                                    {logo ? (
+                                        <img
+                                            src={logo}
+                                            alt="Profile"
+                                            className="absolute inset-0 h-8 w-8 rounded-md object-cover"
+                                        />
+                                    ) : (
+                                        <div className="h-8 w-8 bg-gray-300 rounded-md"></div>
+                                    )}
+                                </div>
+                                <div className="w-1/2 lg:w-full">
                                     <h1 className="font-medium text-white flex-grow">
                                         {name}
                                         <span className={`ml-2 text-sm px-2 text-black rounded-sm ${roleBg}`}>{role}</span>
@@ -86,7 +96,7 @@ const Profile = () => {
                             </div>
                         )}
                     />
-                    
+
                     <SectionCard
                         title="Experience"
                         count={experiences.length}
