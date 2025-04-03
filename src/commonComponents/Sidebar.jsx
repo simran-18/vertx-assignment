@@ -1,16 +1,19 @@
 import { NavLink } from "react-router-dom";
-import { AiOutlineAppstore, AiOutlineLineChart ,AiOutlineSetting} from "react-icons/ai";
-import { MdDashboard, MdConnectWithoutContact, MdNotificationsActive,MdPerson } from "react-icons/md";
 import { useAppContext } from "../contexts/AppContext";
+import dashboard from "../assets/dashboard.png";
+import connect from "../assets/connect.png";
+import dealroom from "../assets/dealroom.png";
+import analytics from "../assets/analytics.png";
+import activity from "../assets/activity.png";
 
 const navItems = [
-  { path: "/", label: "Dashboard", icon: <MdDashboard className="text-xl" /> },
-  { path: "/analytics", label: "Analytics", icon: <AiOutlineLineChart className="text-xl" /> },
-  { path: "/connect", label: "Connect", icon: <MdConnectWithoutContact className="text-xl" /> },
-  { path: "/activity", label: "Activity", icon: <MdNotificationsActive className="text-xl" /> },
-  { path: "/dealroom", label: "Dealroom", icon: <AiOutlineAppstore className="text-xl" /> },
-  { path: "/profile", label: "Profile", icon: <MdPerson className="text-xl" /> },
-  { path: "/settings", label: "Settings", icon: <AiOutlineSetting className="text-xl" /> },
+  { path: "/", label: "Dashboard", icon:dashboard },
+  { path: "/analytics", label: "Analytics", icon: analytics },
+  { path: "/connect", label: "Connect", icon: connect },
+  { path: "/activity", label: "Activity", icon: activity },
+  { path: "/dealroom", label: "Dealroom", icon:dealroom },
+  { path: "/profile", label: "Profile", icon: dealroom }, //image is not in figma
+  { path: "/settings", label: "Settings", icon: dealroom },//image is not in figma
 ];
 
 function Sidebar() {
@@ -48,7 +51,7 @@ function Sidebar() {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black p-4 flex gap-10 justify-around items-center border-t border-gray-800 overflow-x-scroll">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black z-[999] p-4 flex gap-10 justify-around items-center border-t border-gray-800 overflow-x-scroll">
         {navItems.map(({ path, label, icon }) => (
           <NavLink
             key={path}
@@ -58,8 +61,8 @@ function Sidebar() {
             }
             onClick={()=>setPathname(label)}
           >
-            {icon}
-            <span className="text-xs">{label}</span>
+           <img src={icon} alt={label} className="h-8"/>
+            <span className="text-xs text-white">{label}</span>
           </NavLink>
         ))}
       </nav>
