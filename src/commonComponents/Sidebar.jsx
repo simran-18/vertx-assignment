@@ -22,7 +22,7 @@ function Sidebar() {
     <div>
       {/* Desktop Sidebar */}
       <div className="hidden md:block fixed inset-y-0 left-0 w-64 border-r-1 border-dark">
-        <nav className="text-gray-400 mt-12">
+        <nav className="text-lightGray mt-12">
           <div className="flex w-full">
             <div className="border-r-1 border-dark h-screen p-2 py-4 w-16">
             <img
@@ -31,7 +31,7 @@ function Sidebar() {
               className="h-8 w-8 rounded-full"
               />
               </div>
-            <div className="w-full flex flex-col justify-start ml-6 p-4">
+            <div className="w-full text-base flex flex-col justify-start ml-6 p-4">
               {navItems.map(({ path, label }) => (
                 <NavLink
                   key={path}
@@ -57,7 +57,7 @@ function Sidebar() {
             key={path}
             to={path}
             className={({ isActive }) =>
-              `flex flex-col items-center text-gray-400 ${isActive ? "text-white font-bold" : "hover:text-white"}`
+              `flex flex-col items-center text-lightGray ${isActive ? "text-white font-bold" : "hover:text-white"}`
             }
             onClick={()=>setPathname(label)}
           >

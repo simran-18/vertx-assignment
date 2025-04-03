@@ -22,7 +22,7 @@ ChartJS.register(
 );
 import SingleSelect from '../commonComponents/SingleSelect';
 const VisitorsConnectionsChart = () => {
-    // Mock data for 3 different time periods: "Last 30 days", "Last 7 days", "This week"
+    // Mock data for 3 different time periods: "Last 30 days", "Last 7 days", "This week" etc.
     const data = {
         "Yesterday": {
           visitors: [1100, 1300, 1200, 1400, 1300, 1200, 1100],
@@ -72,19 +72,13 @@ const VisitorsConnectionsChart = () => {
 
     const handleMetricChange = (e) => {
         const selectedMetric = e.target.value;
-        setMetrics([selectedMetric]); // Replaces the previous metric with the new selection
+        setMetrics([selectedMetric]);
     };
     const handleAddMetricChange = (e) => {
         const selectedMetric = e.target.value;
-        setMetrics((prevMetrics) => {
-            const newMetrics = prevMetrics.includes(selectedMetric)
-                ? prevMetrics.filter((metric) => metric !== selectedMetric) // Remove if already selected
-                : [...prevMetrics, selectedMetric]; // Add if not present
-            return newMetrics;
-        });
-    };
-    
-    // Calculate percentage change for each metric
+        setMetrics((prevMetrics) => [...prevMetrics, selectedMetric]); 
+    };    
+
     const calculatePercentageChange = (metricData) => {
         return ((metricData?.[metricData?.length - 1] - metricData?.[0]) / metricData?.[0]) * 100;
     };

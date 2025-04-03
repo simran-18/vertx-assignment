@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import profile from "../assets/profile.png";
 import arrow from "../assets/arrow.png";
-import tick from "../assets/tick.png";
-import social from "../assets/social.png";
+import tick from "../assets/twitter.png";
+import linkedIn from "../assets/linkedin.png";
+import x from "../assets/x.png";
+import gmail from "../assets/gmail.png";
 import logo from "../assets/logo.png";
+
 const tabs = [
     { id: "overview", label: "Overview" },
     { id: "portfolio", label: "Portfolio" },
@@ -37,30 +40,34 @@ const Profile = () => {
                     {tabs.map(({ id, label }) => (
                         <button
                             key={id}
-                            className={`w-1/4 lg:px-4 lg:w-fit text-sm transition-all py-4 ${activeTab === id ? "text-white border-b font-bold" : "text-gray-400 hover:text-white"}`}
+                            className={`w-1/4 lg:px-4 lg:w-fit text-sm transition-all py-4 ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"}`}
                             onClick={() => setActiveTab(id)}
                         >
                             {label}
                         </button>
                     ))}
                 </div>
-                <button className="hidden lg:flex px-6 items-center text-gray-400 hover:text-white">
+                <button className="hidden lg:flex px-6 items-center text-lightGray hover:text-white">
                     More <FiArrowRight className="ml-2" />
                 </button>
             </div>
 
             <div className="px-0 lg:px-10 py-4 m-2 lg:m-0">
-                <h1 className="hidden lg:block text-2xl font-semibold pb-4">Overview</h1>
+                <h1 className="hidden lg:block text-2xl font-semibold">Overview</h1>
                 <div className="grid grid-cols-1 gap-6 mb-6">
                     <div className=" border-1 border-dark p-6 rounded-lg flex flex-col lg:flex-row">
                         <img src={profile} alt="profile" className="h-36 w-32" />
                         <div className="flex flex-row items-end lg:items-start lg:flex-col ml-6">
                             <div>
                                 <h1 className="flex text-lg">Mr.A <img src={tick} alt="tick" className="h-6 ml-44" /></h1>
-                                <h2 className="py-1 text-sm text-gray-400 flex">Co-founder & CEO @Vertex <img src={arrow} alt="tick" className="h-5 ml-1" /></h2>
-                                <p className="text-xs bg-gray-200 text-black w-fit px-2 rounded-md">Entrepreneur</p>
+                                <h2 className="py-1 text-sm text-white flex">Co-founder & CEO @Vertex <img src={arrow} alt="tick" className="h-5 ml-1" /></h2>
+                                <p className="text-xs bg-white text-black w-fit px-2 rounded-md">Entrepreneur</p>
                             </div>
-                            <img src={social} alt="social" className="w-16 lg:w-24 lg:h-12 mt-6 object-contain" />
+                            <div className="flex gap-2  mt-6">
+                                <img src={linkedIn} alt="linkedIn" />
+                                <img src={x} alt="x" />
+                                <img src={gmail} alt="gmail" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,7 +79,7 @@ const Profile = () => {
                         items={foundedCompanies}
                         renderItem={({ name, year, industry, role, roleBg, acquired, logo }) => (
                             <div key={name} className="flex justify-between items-start w-full">
-                                <div className="relative h-8 w-8 bg-gray-300 rounded-md mr-2">
+                                <div className="relative h-8 w-8 bg-white rounded-md mr-2">
                                     {logo ? (
                                         <img
                                             src={logo}
@@ -80,19 +87,19 @@ const Profile = () => {
                                             className="absolute inset-0 h-8 w-8 rounded-md object-cover"
                                         />
                                     ) : (
-                                        <div className="h-8 w-8 bg-gray-300 rounded-md"></div>
+                                        <div className="h-8 w-8 bg-white rounded-md"></div>
                                     )}
                                 </div>
-                                <div className="w-1/2 lg:w-full">
+                                <div className="w-1/2 lg:w-3/4">
                                     <h1 className="font-medium text-white flex-grow">
                                         {name}
                                         <span className={`ml-2 text-sm px-2 text-black rounded-sm ${roleBg}`}>{role}</span>
                                     </h1>
-                                    <h2 className="text-xs text-gray-400 block">
+                                    <h2 className="text-xs block">
                                         Founded in {year}{acquired ? `. Acquired by ${acquired}` : ""}. in <span className="font-bold text-white">{industry}</span>
                                     </h2>
                                 </div>
-                                <h2 className="ml-auto text-gray-400 text-xs cursor-pointer">View Profile</h2>
+                                <h2 className="ml-auto text-lightGray text-xs cursor-pointer">View Profile</h2>
                             </div>
                         )}
                     />
@@ -103,9 +110,9 @@ const Profile = () => {
                         items={experiences}
                         renderItem={(company) => (
                             <div key={company} className="flex items-center">
-                                <div className="h-8 w-8 bg-gray-300 rounded-md mr-2"></div>
+                                <div className="h-8 w-8 bg-white rounded-md mr-2"></div>
                                 <span className="font-medium text-white">{company}</span>
-                                <h2 className="ml-auto text-gray-400 text-xs cursor-pointer">View Profile</h2>
+                                <h2 className="ml-auto text-lightGray text-xs cursor-pointer">View Profile</h2>
                             </div>
                         )}
                     />

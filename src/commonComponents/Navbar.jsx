@@ -12,15 +12,15 @@ export function Navbar() {
       {/* Desktop Navbar */}
       <div className="hidden md:flex items-center w-full ">
         <div className="flex items-center w-80">
-          <img src={logo} alt="Logo" className="h-8 mx-2" loading='lazy' />
+          <img src={logo} alt="Logo" className="mx-2 h-9 w-9 bg-white p-1.5 rounded-full " loading='lazy' />
           <span className="text-white font-bold text-lg ml-12">Vertxlabs, Inc</span>
         </div>
         
         <div className="flex text-white w-full justify-between">
             <h1 className="p-4 flex-grow capitalize text-base font-semibold">{pathname}</h1>
             <div>
-           <button className="hover:text-gray-400  border-l-1 border-dark px-6  p-4">Activity</button>
-           <button className="hover:text-gray-400 border-l-1 border-dark px-6  p-4">Log out</button>
+           <button className="hover:text-lightGray  border-l-1 border-dark px-6  p-4">Activity</button>
+           <button className="hover:text-lightGray border-l-1 border-dark px-6  p-4">Log out</button>
             </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ const Analytics = () => {
                     {tabs.map(({ id, label }) => (
                         <button
                             key={id}
-                            className={`w-1/2 lg:w-fit px-6 py-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-gray-400 hover:text-white"
+                            className={`w-1/2 lg:w-fit px-6 py-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"
                                 }`}
                             onClick={() => setActiveTab(id)}
                         >
@@ -55,7 +55,7 @@ const Analytics = () => {
                     ))}
 
                 </div>
-                <button className="hidden lg:flex px-6 items-center text-gray-400 hover:text-white">
+                <button className="hidden lg:flex px-6 items-center text-lightGray hover:text-white">
                     More <FiArrowRight className="ml-2" />
                 </button>
             </div>
@@ -76,7 +76,7 @@ const Analytics = () => {
                                     <p className="text-2xl font-semibold">7.4K </p>
                                     <div className="inline-flex flex-col text-xs ml-6 ">
                                         <span className="text-green-400"> +000%</span>
-                                        <span className="text-gray-400">(000)</span>
+                                        <span className="text-lightGray">(000)</span>
                                     </div>
                                 </div>
                             </div>
@@ -85,11 +85,11 @@ const Analytics = () => {
                                 <div className="flex">
                                     <p className="text-2xl font-semibold">6.09K</p>
                                     <div className="inline-flex flex-col text-xs ml-6"><span className="text-green-400"> 000%</span>
-                                        <span className="text-gray-400">(000)</span></div>
+                                        <span className="text-lightGray">(000)</span></div>
                                 </div>
                             </div>
                         </div>
-                        <button className="mt-4 pt-4 text-white-400 hover:underline flex justify-end border-t-1 border-dark w-full">
+                        <button className="mt-4 pt-4 text-white-400 text-xs flex justify-end border-t-1 border-dark w-full">
                             View detailed insights <FiArrowRight className="ml-2 my-auto" />
                         </button>
                     </div>
@@ -116,7 +116,7 @@ const Analytics = () => {
                                     </Marker>
                                 ))}
                             </MapContainer>
-                            <div className="absolute hidden lg:flex transform flex bg-white/10 rounded-full p-2  ">
+                            <div className="absolute hidden lg:flex transform bg-white/10 rounded-full p-2  ">
                                 {locations.map((location, index) => (
                                     <div key={index} className="flex items-center">
                                         <div
@@ -136,7 +136,7 @@ const Analytics = () => {
                                     <div className="flex flex-col w-full">
                                         <div className="flex justify-between text-sm">
                                             <span className="font-medium">{country}</span>
-                                            <span className="text-gray-400">{percentage}%</span>
+                                            <span className="text-lightGray">{percentage}%</span>
                                         </div>
                                         <div className="bg-white/10 h-3 rounded-lg w-full mt-1 relative">
                                             <div
@@ -149,7 +149,7 @@ const Analytics = () => {
                             ))}
                         </div>
                     </div>
-                    <button className="mt-4 hover:underline flex w-full justify-end">
+                    <button className="mt-4 flex w-full text-xs justify-end">
                         View all countries <FiArrowRight className="ml-2 my-auto" />
                     </button>
                 </div>

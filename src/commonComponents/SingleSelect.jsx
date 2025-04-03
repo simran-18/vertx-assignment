@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react"; 
+import { IoMdArrowDropdown } from "react-icons/io"; 
 
 const SingleSelect = ({ id, value, onChange, options, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,21 +10,21 @@ const SingleSelect = ({ id, value, onChange, options, placeholder }) => {
   };
 
   return (
-    <div className="relative w-full border-2 border-dark rounded-md ">
+    <div className="relative w-full border-1 border-dark rounded-lg ">
       <div
-        className="w-full bg-black text-lightGray p-1 rounded-md text-xs md:text-lg  flex justify-between items-center cursor-pointer focus:border-gray-500 focus:ring focus:ring-gray-600 transition duration-200"
+        className="w-full bg-black text-white p-1 text-xs md:text-lg  flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{value ? options.find((opt) => opt.value === value)?.label : placeholder}</span>
-        <ChevronDown className="w-4 h-4" />
+        <IoMdArrowDropdown className="w-4 h-4" />
       </div>
 
       {isOpen && (
-        <ul className="absolute left-0 w-full bg-black border-2 border-dark rounded-md shadow-lg z-10">
+        <ul className="absolute left-0 w-full bg-black border-1 border-dark rounded-lg shadow-lg z-10">
           {options.map((option, index) => (
             <li
               key={option.value}
-              className="p-2 text-[#555555] hover:bg-gray-700 hover:text-white text-sm cursor-pointer"
+              className={`p-2  hover:bg-gray-700 ${value===option.value?'text-white':'text-[#555555]'} hover:text-white text-sm cursor-pointer`}
               onClick={() => handleSelect(option.value)}
             >
               {option.label}
