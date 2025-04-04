@@ -1,10 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useAppContext } from "../contexts/AppContext";
 import dashboard from "../assets/dashboard.png";
 import connect from "../assets/connect.png";
 import dealroom from "../assets/dealroom.png";
 import analytics from "../assets/analytics.png";
 import activity from "../assets/activity.png";
+import user from "../assets/user.png";
+import plus from "../assets/plus.png";
+import profile1 from "../assets/profile1.png";
+import profile2 from "../assets/profile2.png";
+import profile3 from "../assets/profile3.png";
 
 const navItems = [
   { path: "/", label: "Dashboard", icon:dashboard },
@@ -15,21 +20,37 @@ const navItems = [
   { path: "/profile", label: "Profile", icon: dealroom }, //image is not in figma
   { path: "/settings", label: "Settings", icon: dealroom },//image is not in figma
 ];
-
+const imgs=[
+  {id:1,icon:profile1,alt:'profile1'},
+  {id:2,icon:profile2,alt:'profile2'},
+  {id:3,icon:profile3,alt:'profile3'},
+]
 function Sidebar() {
   const {setPathname}=useAppContext();
+  const {pathname}=useLocation();
   return (
     <div>
       {/* Desktop Sidebar */}
       <div className="hidden md:block fixed inset-y-0 left-0 w-64 border-r-1 border-dark">
         <nav className="text-lightGray mt-12">
           <div className="flex w-full">
-            <div className="border-r-1 border-dark h-screen p-2 py-4 w-16">
-            <img
-              src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=1024x1024&w=is&k=20&c=iGtRKCTRSvPVl3eOIpzzse5SvQFfImkV0TZuFh-74ps="
+            <div className="border-r-1 border-dark h-screen  py-2 w-20 ">
+              <div className="pb-2 border-b-1 border-dark">
+             {pathname!=="/profile"?<img
+              src={user}
               alt="Profile"
-              className="h-8 w-8 rounded-full"
-              />
+              className="h-12 w-12 "
+              />:<>
+              {imgs.map((img,_)=>
+              {
+                return <img
+                src={img.icon}
+                alt={img.alt}
+                className="h-12 w-12 "
+                />
+              })}
+              </>}
+              </div>
               </div>
             <div className="w-full text-base flex flex-col justify-start ml-6 p-4">
               {navItems.map(({ path, label }) => (
@@ -45,7 +66,7 @@ function Sidebar() {
                 </NavLink>
               ))}
             </div>
-            <div className="fixed bottom-3 left-3 font-xl ">+</div>
+            <div className="fixed bottom-3 left-1 text-white"><img src={plus} alt="plus" className="w-10 h-10"/></div>
           </div>
         </nav>
       </div>

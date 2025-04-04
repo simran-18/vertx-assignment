@@ -6,6 +6,7 @@ export default {
       colors:
       {
         lightGray:"#555555",
+        darkGreen:"#01754F"
       },
       borderColor: {
         dark: '#1D1D1D', 

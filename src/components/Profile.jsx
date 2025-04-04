@@ -40,7 +40,7 @@ const Profile = () => {
                     {tabs.map(({ id, label }) => (
                         <button
                             key={id}
-                            className={`w-1/4 lg:px-4 lg:w-fit text-sm transition-all py-4 ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"}`}
+                            className={`w-1/4 lg:px-4 lg:w-fit text-sm transition-all  pt-5 pb-4 ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"}`}
                             onClick={() => setActiveTab(id)}
                         >
                             {label}

@@ -12,7 +12,7 @@ const SingleSelect = ({ id, value, onChange, options, placeholder }) => {
   return (
     <div className="relative w-full border-1 border-dark rounded-lg ">
       <div
-        className="w-full bg-black text-white p-1 text-xs md:text-lg  flex justify-between items-center cursor-pointer"
+        className="w-full bg-black text-white p-1 text-xs flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{value ? options.find((opt) => opt.value === value)?.label : placeholder}</span>

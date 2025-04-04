@@ -27,10 +27,10 @@ const demographicsData = [
     { country: "UAE", percentage: 7, color: "#579560", map: uae },
 ];
 const locations = [
-    { lat: 40.7128, lon: -74.0060, color: 'orange', label: 'New York' },
-    { lat: 51.5074, lon: -0.1278, color: 'yellow', label: 'London' },
-    { lat: 34.0522, lon: -118.2437, color: 'cyan', label: 'Delhi' },
-    { lat: 28.6139, lon: 77.2090, color: 'purple', label: 'Beijing' },
+    { lat: 40.7128, lon: -74.0060, color: '#4834D4', label: 'New York' },
+    { lat: 51.5074, lon: -0.1278, color: '#BD5302', label: 'London' },
+    { lat: 34.0522, lon: -118.2437, color: '#E9C16B', label: 'Delhi' },
+    { lat: 28.6139, lon: 77.2090, color: '#579560', label: 'Beijing' },
 ];
 const tabs = [
     { id: "overview", label: "Overview" },
@@ -46,7 +46,7 @@ const Analytics = () => {
                     {tabs.map(({ id, label }) => (
                         <button
                             key={id}
-                            className={`w-1/2 lg:w-fit px-6 py-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"
+                            className={`w-1/2 lg:w-fit px-6 pt-5 pb-4 text-sm transition-all ${activeTab === id ? "text-white border-b font-bold" : "text-lightGray hover:text-white"
                                 }`}
                             onClick={() => setActiveTab(id)}
                         >
@@ -75,7 +75,7 @@ const Analytics = () => {
                                 <div className="flex">
                                     <p className="text-2xl font-semibold">7.4K </p>
                                     <div className="inline-flex flex-col text-xs ml-6 ">
-                                        <span className="text-green-400"> +000%</span>
+                                        <span className="text-darkGreen"> +000%</span>
                                         <span className="text-lightGray">(000)</span>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ const Analytics = () => {
                                 <p className="">Investors</p>
                                 <div className="flex">
                                     <p className="text-2xl font-semibold">6.09K</p>
-                                    <div className="inline-flex flex-col text-xs ml-6"><span className="text-green-400"> 000%</span>
+                                    <div className="inline-flex flex-col text-xs ml-6"><span className="text-darkGreen"> 000%</span>
                                         <span className="text-lightGray">(000)</span></div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ const Analytics = () => {
                                     </Marker>
                                 ))}
                             </MapContainer>
-                            <div className="absolute hidden lg:flex transform bg-white/10 rounded-full p-2  ">
+                            <div className="absolute hidden lg:flex gap-3 transform bg-black border-2 border-dark rounded-full p-2  ">
                                 {locations.map((location, index) => (
                                     <div key={index} className="flex items-center">
                                         <div

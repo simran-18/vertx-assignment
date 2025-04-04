@@ -91,8 +91,8 @@ const VisitorsConnectionsChart = () => {
             datasets.push({
                 label: "Visitors",
                 data: currentData?.visitors,
-                borderColor: '#A3A3FF', // Purple line
-                backgroundColor: 'rgba(163, 163, 255, 0.3)', // Purple background
+                borderColor: '#A3A3FF', 
+                backgroundColor: 'rgba(163, 163, 255, 0.3)',
                 fill: true,
                 tension: 0.1,
             });
@@ -101,8 +101,8 @@ const VisitorsConnectionsChart = () => {
             datasets.push({
                 label: "Connections",
                 data: currentData?.connections,
-                borderColor: '#FFFFFF', // White line
-                backgroundColor: 'rgba(255, 255, 255, 0.3)', // White background
+                borderColor: '#FFFFFF',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)', 
                 fill: true,
                 tension: 0.1,
             });
@@ -111,8 +111,8 @@ const VisitorsConnectionsChart = () => {
             datasets.push({
                 label: "Interactions",
                 data: currentData?.interactions,
-                borderColor: '#00FF00', // Green line
-                backgroundColor: 'rgba(0, 255, 0, 0.3)', // Green background
+                borderColor: '#00FF00', 
+                backgroundColor: 'rgba(0, 255, 0, 0.3)', 
                 fill: true,
                 tension: 0.1,
             });
@@ -121,8 +121,8 @@ const VisitorsConnectionsChart = () => {
             datasets.push({
                 label: "Impressions",
                 data: currentData?.impressions,
-                borderColor: '#FFA500', // Orange line
-                backgroundColor: 'rgba(255, 165, 0, 0.3)', // Orange background
+                borderColor: '#FFA500', 
+                backgroundColor: 'rgba(255, 165, 0, 0.3)', 
                 fill: true,
                 tension: 0.1,
             });
@@ -221,7 +221,7 @@ const VisitorsConnectionsChart = () => {
                     <div className="text-center flex border-r">
                         <div className="text-2xl">{new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(currentData?.visitors[currentData.visitors.length - 1])}</div>
                         <div className='mx-2'>
-                            <div className="text-sm text-green-400">+{calculatePercentageChange(currentData?.visitors).toFixed(1)}%</div>
+                            <div className="text-sm text-darkGreen">+{calculatePercentageChange(currentData?.visitors).toFixed(1)}%</div>
                             <div className="text-sm text-gray-400">({currentData?.visitors[0]})</div>
                         </div>
                     </div>
@@ -230,7 +230,7 @@ const VisitorsConnectionsChart = () => {
                     <div className="text-center flex  border-r">
                         <div className="text-2xl">{new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(currentData?.connections[currentData.connections.length - 1])}</div>
                         <div className='mx-2'>
-                            <div className="text-sm text-green-400">+{calculatePercentageChange(currentData?.connections).toFixed(1)}%</div>
+                            <div className="text-sm text-darkGreen">+{calculatePercentageChange(currentData?.connections).toFixed(1)}%</div>
                             <div className="text-sm text-gray-400">({currentData?.connections[0]})</div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ const VisitorsConnectionsChart = () => {
                         <div className="text-2xl">{new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(currentData?.interactions[currentData.interactions.length - 1])}
                             </div>
                         <div className='mx-2'>
-                            <div className="text-sm text-green-400">+{calculatePercentageChange(currentData?.interactions).toFixed(1)}%</div>
+                            <div className="text-sm text-darkGreen">+{calculatePercentageChange(currentData?.interactions).toFixed(1)}%</div>
                             <div className="text-sm text-gray-400">({currentData?.interactions?.[0]})</div>
                         </div>
                     </div>
@@ -249,7 +249,7 @@ const VisitorsConnectionsChart = () => {
                     <div className="text-center flex border-r">
                         <div className="text-2xl">{new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(currentData?.impressions[currentData.impressions.length - 1])}</div>
                         <div className='mx-2'>
-                            <div className="text-sm text-green-400">+{calculatePercentageChange(currentData?.impressions).toFixed(1)}%</div>
+                            <div className="text-sm text-darkGreen">+{calculatePercentageChange(currentData?.impressions).toFixed(1)}%</div>
                             <div className="text-sm text-gray-400">({currentData?.impressions[0]})</div>
                         </div>
                     </div>
