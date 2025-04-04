@@ -99,7 +99,7 @@ const Profile = () => {
                                         Founded in {year}{acquired ? `. Acquired by ${acquired}` : ""}. in <span className="font-bold text-white">{industry}</span>
                                     </h2>
                                 </div>
-                                <h2 className="ml-auto text-lightGray text-xs cursor-pointer">View Profile</h2>
+                                <h2 className="ml-auto text-white text-xs cursor-pointer">View Profile</h2>
                             </div>
                         )}
                     />
@@ -112,7 +112,7 @@ const Profile = () => {
                             <div key={company} className="flex items-center">
                                 <div className="h-8 w-8 bg-white rounded-md mr-2"></div>
                                 <span className="font-medium text-white">{company}</span>
-                                <h2 className="ml-auto text-lightGray text-xs cursor-pointer">View Profile</h2>
+                                <h2 className="ml-auto text-white text-xs cursor-pointer">View Profile</h2>
                             </div>
                         )}
                     />
